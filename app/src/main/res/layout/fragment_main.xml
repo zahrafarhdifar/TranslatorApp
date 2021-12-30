@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/logo"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/search_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/search_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/bg_bordered"
+        android:backgroundTint="@color/white">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/search_word_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/purple"
+            android:textColorHint="@color/french_violet"
+            android:hint="@string/word"
+            android:background="@drawable/bg_bordered"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ImageView
+        android:id="@+id/search_word_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_magnifying_glass"
+        app:tint="@color/purple"
+        app:layout_constraintTop_toBottomOf="@id/search_layout"
+        android:layout_marginTop="60dp"
+        app:layout_constraintLeft_toLeftOf="@id/search_layout"/>
+
+    <ProgressBar
+        android:id="@+id/search_progress_bar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/white"
+        android:indeterminateTint="@color/french_violet"
+        app:layout_constraintTop_toTopOf="@id/search_word_btn"
+        app:layout_constraintLeft_toLeftOf="@id/search_word_btn"
+        android:visibility="invisible"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/select_language_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/flag_iran"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/white"
+        android:padding="10dp"
+        app:layout_constraintLeft_toRightOf="@id/search_word_btn"
+        app:layout_constraintTop_toTopOf="@id/search_word_btn"
+        android:layout_marginStart="10dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splashScreenFragment">
+
+
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.minjee.basicmvvmexample.view.MainFragment"
+        tools:layout="@layout/fragment_main"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/navigateToResult"
+            app:destination="@id/searchResultFragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.minjee.basicmvvmexample.view.SearchResultFragment"
+        android:label="SearchResultFragment"
+        tools:layout="@layout/fragment_search_result">
+
+        <argument
+            android:name="searchResult"
+            app:argType="com.minjee.basicmvvmexample.model.dto.SearchDto"/>
+
+        <argument
+            android:name="word"
+            app:argType="string"/>
+
+        <argument
+            android:name="language"
+            app:argType="string"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.minjee.basicmvvmexample.view.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/navigateToMainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+</navigation>
